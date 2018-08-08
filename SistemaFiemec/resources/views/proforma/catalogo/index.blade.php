@@ -26,9 +26,8 @@
 					
 				</thead>
 
-				@foreach ($proformas as $pro)
+				@foreach ($catalogos as $pro)
 				
-
 				<tr>
 
 					
@@ -52,7 +51,7 @@
              @endforeach
 			</table>
 		</div>
-		{{$proformas->render()}}
+		{{$catalogos->render()}}
 	</div>
 </div>
 

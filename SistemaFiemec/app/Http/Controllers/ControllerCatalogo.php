@@ -20,7 +20,7 @@ class ControllerCatalogo extends Controller
     if($request)
     {
        $query=trim($request->get('searchtext'));
-       $catalogos=DB::table('producto')
+       $catalogos=DB::table('Producto')
        ->where('serie_producto','LIKE','%'.$query.'%')
        ->where('estado','=','activo')
        ->orderby('idProducto','asc')
