@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class ControllerCatalogo extends Controller
 {
+    public function __construct()
+    {
+       
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +17,7 @@ class ControllerCatalogo extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
