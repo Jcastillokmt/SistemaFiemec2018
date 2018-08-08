@@ -8,7 +8,7 @@ class ControllerCatalogo extends Controller
 {
     public function __construct()
     {
-       hola mundo
+       
     }
     /**
      * Display a listing of the resource.
