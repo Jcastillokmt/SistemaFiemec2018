@@ -1,9 +1,9 @@
 @extends ('layouts.admin')
 @section ('contenido')
 <div class='col-lg-8 col-sm-8 col-xs-12'>
-	<h3> Catalogo de Productos</h3>
+	<h3> Lista de Productos <a href="producto/create"> <button class="btn btn-success">Nuevo</button></a></h3>
 	
-	@include('proforma.catalogo.search')
+	@include('proforma.producto.search')
 </div>
 <div class='row'>
 	<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
@@ -15,18 +15,16 @@
 					<th>Codigo</th>
 					<th>Nombre</th>
 					<th>Marca</th>
-					<th>Stock</th>
                     <th>Descripcion</th>
-                    <th>Precio</th>
-                    <th>Categoria</th>
-                    <th>Estado</th>
+                    <th>Precio</th>                
+                    
                    
 
 
 					
 				</thead>
 
-				@foreach ($catalogos as $pro)
+				@foreach ($productos as $pro)
 				
 				<tr>
 
@@ -35,11 +33,10 @@
 					<td>{{$pro->codigo_producto}}</td>
 					<td>{{$pro->nombre_producto}}</td>
 					<td>{{$pro->marca_producto}}</td>
-					<td>{{$pro->stock}}</td>
 					<td>{{$pro->descripcion_producto}}</td>
-					<td>{{$pro->precio_unitario}}</td>
-					<td>{{$pro->categoria_producto}}</td>
-					<td>{{$pro->estado}}</td>
+					<td>S/. {{$pro->precio_unitario}}</td>
+					
+					
 					
 					
 					
@@ -48,7 +45,7 @@
              @endforeach
 			</table>
 		</div>
-		{{$catalogos->render()}}
+		{{$productos->render()}}
 	</div>
 </div>
 

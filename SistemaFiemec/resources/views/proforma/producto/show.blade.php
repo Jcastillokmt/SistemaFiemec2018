@@ -7,11 +7,11 @@
                       <th ></th>
                         
                  </tfoot>
-				@foreach($catalogo as $dp)
+				@foreach($pro as $p)
 
 				<tr>
 	
-					<td><font FACE="impact" SIZE=8 COLOR="black">{{$dp->nombre}}</font></td>
+				<td><font FACE="impact" SIZE=8 COLOR="black">{{$p->nombre}}</font></td>
 					
 				</tr>
 				@endforeach
@@ -21,19 +21,18 @@
     	   
 
             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-            	<table id="catalogo" class="table table-striped table-bordered table-condensed table-hover">
+            	<table id="pro" class="table table-striped table-bordered table-condensed table-hover">
             		<thead style="background-color:#3c8dbc">
 		
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Id</font></th>
 
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Codigo</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">codarticulo</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Nombre</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Marca</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Stock</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Descripcion</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">categoria</font></th>
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Precio</font></th>
-					
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">precio</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">estado</font></th>
 
 					
@@ -46,7 +45,7 @@
 
             		</tfoot>
             		<tbody>
-            			@foreach($catalogo as $dp)
+            			@foreach($pro as $dp)
                         <tr>
 					<td style="text-align:center;"><h3>{{$dp->idProducto}}</h3></td>
 					<td style="text-align:center;"><h3>{{$dp->codarticulo}}</h3></td>
@@ -69,10 +68,11 @@
 
             		
             	</table>
-            	<font SIZE=4 COLOR="white">---------------------------------------------------------------------------------------------------------------------------------------------------*-------</font><a href="{{url('ventas/catalogo')}}"><button class="btn btn-success"><font FACE="Arial" SIZE=4 COLOR="white">volver</font></button></a></h3>
-            	
-     
-   
+            	<font SIZE=4 COLOR="white">---------------------------------------------------------------------------------------------------------------------------------------------------*-------</font><a href="{{url('ventas/producto')}}"><button class="btn btn-success"><font FACE="Arial" SIZE=4 COLOR="white">volver</font></button></a></h3>
+            </div>
+      </div>
+</div>
+</div>    
    
 
 

@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Redirect;
 use SistemaFiemec\Http\Requests\RequestFormProducto;
 use DB;
 
-class ControllerCatalogo extends Controller
+class ControllerProducto extends Controller
 {
-    public function __construct()
+  public function __construct()
     {
 
     }
@@ -20,27 +20,28 @@ class ControllerCatalogo extends Controller
     if($request)
     {
        $query=trim($request->get('searchText'));
-       $catalogos=DB::table('Producto')
+       $productos=DB::table('Producto')
        ->where('serie_producto','LIKE','%'.$query.'%')
+       ->orwhere('codigo_producto','LIKE','%'.$query.'%')
+       ->orwhere('marca_producto','LIKE','%'.$query.'%')
        ->where('estado','=','activo')
        ->orderby('idProducto','asc')
-       ->paginate(10);
+       ->paginate(20);
 
-       return view('proforma.catalogo.index',["catalogos"=>$catalogos,"searchText"=>$query]);
+       return view('proforma.producto.index',["productos"=>$productos,"searchText"=>$query]);
     }
 }
     
     public function create()
     {
-        //
+
+     
+      return view('proforma.producto.create');
+ 
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         //
