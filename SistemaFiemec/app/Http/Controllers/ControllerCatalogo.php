@@ -3,10 +3,10 @@
 namespace SistemaFiemec\Http\Controllers;
 
 use Illuminate\Http\Request;
-use sisVentas\Producto;
+use SistemaFiemec\Producto;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
-use sisVentas\Http\Requests\RequestFormProducto;
+use SistemaFiemec\Http\Requests\RequestFormProducto;
 use DB;
 
 class ControllerCatalogo extends Controller

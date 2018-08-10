@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('proforma/catalogo','ControllerCatalogo');
+Route::resource('proforma/empleado','ControllerEmpleados');
+Route::resource('proforma/producto','ControllerProducto');
+Route::resource('proforma/cliente','ControllerClientes');
+Route::resource('proforma/proveedor','ControllerProveedor');
