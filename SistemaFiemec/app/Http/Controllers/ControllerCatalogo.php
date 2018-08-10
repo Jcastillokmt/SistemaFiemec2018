@@ -19,12 +19,14 @@ class ControllerCatalogo extends Controller
     {
     if($request)
     {
-       $query=trim($request->get('searchtext'));
+       $query=trim($request->get('searchText'));
        $catalogos=DB::table('Producto')
        ->where('serie_producto','LIKE','%'.$query.'%')
+       ->orwhere('codigo_producto','LIKE','%'.$query.'%')
+       ->orwhere('nombre_producto','LIKE','%'.$query.'%')
        ->where('estado','=','activo')
        ->orderby('idProducto','asc')
-       ->paginate(10);
+       ->paginate(20);
 
        return view('proforma.catalogo.index',["catalogos"=>$catalogos,"searchText"=>$query]);
     }

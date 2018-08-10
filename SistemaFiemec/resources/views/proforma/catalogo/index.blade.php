@@ -14,12 +14,11 @@
 					<th>Nº Serie</th>
 					<th>Codigo</th>
 					<th>Nombre</th>
-					<th>Marca</th>
-					<th>Stock</th>
+					<th>Marca</th>				
                     <th>Descripcion</th>
                     <th>Precio</th>
-                    <th>Categoria</th>
-                    <th>Estado</th>
+                 
+                    
                    
 
 
@@ -34,18 +33,14 @@
 					<td>{{$pro->serie_producto}}</td>
 					<td>{{$pro->codigo_producto}}</td>
 					<td>{{$pro->nombre_producto}}</td>
-					<td>{{$pro->marca_producto}}</td>
-					<td>{{$pro->stock}}</td>
+					<td>{{$pro->marca_producto}}</td>	
 					<td>{{$pro->descripcion_producto}}</td>
-					<td>{{$pro->precio_unitario}}</td>
-					<td>{{$pro->categoria_producto}}</td>
-					<td>{{$pro->estado}}</td>
+					<td>S/. {{$pro->precio_unitario}}</td>
 					
 					
-					<!--  <td>
-					<a href="{{URL::action('CatalogoController@show',$cat->idProducto)}}"><button class="btn btn-input">ver</button>
-					</a>
-					</td>-->
+					
+					
+					
 				</tr>
 				
              @endforeach
@@ -60,4 +55,8 @@
 <!-- COMENTARIOS
 -Codigo de pedido ira en el detalle catalogo
 -Foto ira en el detalle catalogo
--fecha de sistema de registro ira en el detalle catalogo  -->
+-fecha de sistema de registro ira en el detalle catalogo
+-Stock ira en el detalle catalogo
+-categoria ira en el detalle catalogo
+-estado ira en el detalle catalogo
+ -->
