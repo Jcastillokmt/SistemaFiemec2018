@@ -23,6 +23,7 @@
 </div>
 
 <div class="form-group">
+<<<<<<< HEAD
 	<label for="serie_producto">Serie Producto</label>
 	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
 </div>
@@ -33,6 +34,26 @@
 <div class="form-group">
 	<label for="codigo_producto">Codigo Producto</label>
 	<input type="text" name="codigo_producto" class="form-control" required value="{{$producto->codigo_producto}}">	
+=======
+	<label for="serie_producto">Serie</label>
+	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
+</div>
+<div class="form-group">
+	<label for="codigo_pedido">Codigo Pedido</label>
+	<input type="text" name="codigo_pedido" class="form-control" required value="{{$producto->codigo_pedido}}">	
+</div>
+<div class="form-group">
+	<label for="codigo_producto">Nombre Producto</label>
+	<input type="text" name="codigo_producto" class="form-control" required value="{{$producto->codigo_producto}}">	
+</div>
+<div class="form-group">
+	<label for="nombre_producto">Nombre</label>
+	<input type="text" name="nombre_productoe" class="form-control" required value="{{$producto->nombre_producto}}">	
+</div>
+<div class="form-group">
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" class="form-control" required value="{{$producto->nombre}}">	
+>>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
 </div>
 <div class="form-group">
 	<label for="nombre_producto">Nombre Producto</label>
@@ -91,6 +112,9 @@
 </div>
 {!!Form::close()!!}
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
 @endsection

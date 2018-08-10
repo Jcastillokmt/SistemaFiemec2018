@@ -65,6 +65,7 @@ class ControllerProducto extends Controller
         return Redirect::to('proforma/producto');
 
     }
+<<<<<<< HEAD
 
 public function edit($id)
     {
@@ -73,6 +74,14 @@ public function edit($id)
    
    public function update(RequestFormProducto $request,$id)
     {
+=======
+   public function edit($id)
+    {
+        return view("proforma.producto.edit",["producto"=>Producto::findOrFail($id)]);
+    }
+    public function update(RequestFormProducto $request,$id)
+    {
+>>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
        $producto=Producto::findOrFail($id);
         $producto->serie_producto=$request->get('serie_producto');
         $producto->codigo_pedido=$request->get('codigo_pedido');
@@ -86,12 +95,20 @@ public function edit($id)
         $producto->update();
         return Redirect::to('proforma/producto');
     }
+<<<<<<< HEAD
     public function destroy($id)
     {
         $producto=Producto::findOrFail($id);
         $producto->estado='retirado';
         $producto->update();
         return Redirect::to('proforma/producto');
+=======
+
+    
+    public function destroy($id)
+    {
+        
+>>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
     }
  
  }
