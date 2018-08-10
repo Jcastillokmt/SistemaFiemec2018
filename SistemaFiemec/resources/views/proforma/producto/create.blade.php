@@ -21,6 +21,10 @@
 	<input type="text" name="serie_producto" class="form-control" placeholder="Nº serie...">	
 </div>
 <div class="form-group">
+	<label for="codigo_pedido">Codigo de Pedido</label>
+	<input type="text" name="codigo_pedido" class="form-control" placeholder="codigo pedido...">	
+</div>
+<div class="form-group">
 	<label for="codigo_producto">Codigo producto</label>
 	<input type="text" name="codigo_producto" class="form-control" placeholder="codigo...">	
 </div>
@@ -29,19 +33,24 @@
 	<input type="text" name="nombre_producto" class="form-control" placeholder="nombre...">	
 </div>
 
-<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+
 	<div class="from-group">
 	    <label>Marca</label>
 	    <select name="marca_producto" class="form-control">
+	    	<option ></option>
 			<option value="ABB">ABB</option>
 			<option value="Schneider">Schneider</option>
 		</select>
 	</div>
+
+<div class="form-group">
+	<label for="stock">stock</label>
+	<input type="text" name="stock" class="form-control" placeholder="stock...">	
 </div>
 
 <div class="form-group">
 	<label for="descripcion_producto">Descripcion</label>
-	<input type="text" name="descripcion_producto" class="form-control" placeholder="descripcion_producto...">	
+	<input type="text" name="descripcion_producto" class="form-control" placeholder="descripcion...">	
 </div>
 
 <div class="form-group">
@@ -49,12 +58,24 @@
 	<input type="text" name="precio_unitario" class="form-control" placeholder="precio...">	
 </div>
 
+<div class="from-group">
+	    <label>Categoria</label>
+	    <select name="categoria_producto" class="form-control">
+	    	<option ></option>
+			<option value="Catalogo">Catalogo</option>
+			<option value="Producto Fiemec">Producto Fiemec</option>
+		</select>
+	</div>
 
-<div class="from-group mt-6">
+
+
+<div class="from-group">
+
 	<button class="btn btn-primary" type="submit">guardar</button>
 	<button class="btn btn-danger" type="reset">Limpiar</button>
 
 </div>
+
 </div>
 
 
@@ -62,4 +83,5 @@
 
 </div>
 
-</div>
+
+@endsection

@@ -41,7 +41,10 @@
 					<td>{{$pro->categoria_producto}}</td>
 					<td>{{$pro->estado}}</td>
 					
-					
+					<td>
+					<a href="{{URL::action('ControllerCatalogo@show',$cat->idProducto)}}"><button class="btn btn-input">ver</button>
+					</a>
+					</td>
 					
 				</tr>
 				
