@@ -25,18 +25,18 @@ class ControllerClientes extends Controller
     if($request)
     {
        $query=trim($request->get('searchText'));
-       $clientes=DB::table('Cliente_Proveedor as cp')
-       ->join('Cliente_direccion as cd','cp.idCliente','=','cd.idCliente')
+       $clientes=DB::table('Cliente_Proveedor as cr')
+       ->join('Cliente_direccion as cd','cr.idCliente','=','cd.idCliente')
 
-       ->select('cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.telefono','cp.celular','cp.correo','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cp.estado')
+       ->select('cr.idCliente','cr.tipo_documento','cr.nro_documento','cr.nombres_Rs','cr.parterno','cr.materno','cr.telefono','cr.celular','cr.correo','cr.cuenta_1','cr.cuenta_2','cr.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cr.estado')
 
-       ->groupBy('cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.telefono','cp.celular','cp.correo','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cp.estado')
+       ->groupBy('cr.idCliente','cr.tipo_documento','cr.nro_documento','cr.nombres_Rs','cr.parterno','cr.materno','cr.telefono','cr.celular','cr.correo','cr.cuenta_1','cr.cuenta_2','cr.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cr.estado')
 
-       ->where('nro_documento','LIKE','%'.$query.'%')
-       ->orwhere('nombres_Rs','LIKE','%'.$query.'%')
-       ->orwhere('tipo_documento','LIKE','%'.$query.'%')
-       ->where('tipo_persona','=','cliente')
-       ->orderby('idCliente','asc')
+       ->where('cr.nro_documento','LIKE','%'.$query.'%')
+       ->orwhere('cr.nombres_Rs','LIKE','%'.$query.'%')
+       ->orwhere('cr.tipo_documento','LIKE','%'.$query.'%')
+       ->where('cr.tipo_persona','=','cliente')
+       ->orderby('cr.idCliente','asc')
        ->paginate(10);
 
        return view('proforma.cliente.index',["clientes"=>$clientes,"searchText"=>$query]);
@@ -44,72 +44,17 @@ class ControllerClientes extends Controller
 
     }
 
-     
-public function create()
-    {
-        //
-    }
-public function store(RequestFormProducto $request)
-    {
-        $producto=new Producto;
-        $producto->serie_producto=$request->get('serie_producto');
-        $producto->codigo_pedido=$request->get('codigo_pedido');
-        $producto->codigo_producto=$request->get('codigo_producto');
-        $producto->nombre_producto=$request->get('nombre_producto');
-        $producto->marca_producto=$request->get('marca_producto');
-        $producto->stock=$request->get('stock');
-        $producto->descripcion_producto=$request->get('descripcion_producto');
-        $producto->precio_unitario=$request->get('precio_unitario');
-        $producto->categoria_producto=$request->get('categoria_producto');
-        $mytime = Carbon::now('America/Lima');
-        $producto->fecha_sistema=$mytime->toDateTimeString();
-        $producto->estado='activo';
-        $producto->save();
-        return Redirect::to('proforma/producto');
-
-    }
-
+}
     public function show($id)
     {
-    
-    
+ 	$cliente=DB::table('Cliente_Proveedor as cp')
+    ->join('Cliente_direccion as cd','cp.idCliente','=','cd.idCliente')
+    ->select('cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.paterno','cp.materno','cp.fecha_ nacimiento','cp.sexo','cp.telefono','cp.celular','cp.correo','cp.foto','cp.tipo_persona','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cp.fecha_sistema','cp.estado','cd.provincia','cd.distrito','cd.direcion','cd.referencia')
+    ->where('cp.idCliente','=',$id)
+    ->get();
+		return view("proforma.cliente.show",["cliente"=>$cliente]);
+   
    
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-      @return \Illuminate\Http\Response
-     /
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-      @param  int  $id
-      @return \Illuminate\Http\Response
-     /
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /*
-      Remove the specified resource from storage.
-     
-      @param  int  $id
-      @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
- }
-}
-
+  
 }

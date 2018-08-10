@@ -44,19 +44,26 @@
 
 					
 					
-					<td>{{$Cli->tipo_documento}}</td>
+					<td>{{$cli->tipo_documento}}</td>
 					<td>{{$cli->nro_documento}}</td>
-					<td>{{$Cli->nombres_Rs}}</td>
+					<td>{{$cli->nombres_Rs}}</td>
 					<td>{{$cli->paterno}}</td>
-					<td>{{$Cli->materno}}</td>
+					<td>{{$cli->materno}}</td>
 					<td>{{$cli->telefono}}</td>
-					<td>{{$Cli->celular}}</td>
+					<td>{{$cli->celular}}</td>
 					<td>{{$cli->correo}}</td>
-					<td>{{$Cli->cuenta_1}}</td>
+					<td>{{$cli->cuenta_1}}</td>
 					<td>{{$cli->cuenta_2}}</td>
-					<td>{{$Cli->cuenta_3}}</td>
+					<td>{{$cli->cuenta_3}}</td>
 					<td>{{$cli->direcion}}</td>
-					<td>{{$Cli->estado}}</td>
+					<td>{{$cli->estado}}</td>
+
+
+
+						<td>
+					<a href="{{URL::action('ControllerClientes@show',$cli->idCliente)}}"><button class="btn btn-input">ver</button>
+					</a>
+					</td>
 					
 				</tr>
 				
