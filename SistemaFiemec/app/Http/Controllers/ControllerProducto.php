@@ -65,44 +65,29 @@ class ControllerProducto extends Controller
         return Redirect::to('proforma/producto');
 
     }
-    public function show($id)
+   public function edit($id)
     {
+        return view("proforma.producto.edit",["producto"=>Producto::findOrFail($id)]);
+    }
+    public function update(RequestFormProducto $request,$id)
+    {
+       $producto=Producto::findOrFail($id);
+        $producto->serie_producto=$request->get('serie_producto');
+        $producto->codigo_pedido=$request->get('codigo_pedido');
+        $producto->codigo_producto=$request->get('codigo_producto');
+        $producto->nombre_producto=$request->get('nombre_producto');
+        $producto->marca_producto=$request->get('marca_producto');
+        $producto->stock=$request->get('stock');
+        $producto->descripcion_producto=$request->get('descripcion_producto');
+        $producto->precio_unitario=$request->get('precio_unitario');
+        $producto->categoria_producto=$request->get('categoria_producto');
+        $producto->update();
+        return Redirect::to('proforma/producto');
+    }
+
     
-    
-   
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-      @return \Illuminate\Http\Response
-     /
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-      @param  int  $id
-      @return \Illuminate\Http\Response
-     /
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /*
-      Remove the specified resource from storage.
-     
-      @param  int  $id
-      @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        
     }
  }

@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-	<h3>Modificar Producto: {{ $producto->nombre}}</h3>
+	<h3>Modificar Producto: {{ $producto->nombre_producto}}</h3>
 	@if (count($errors)>0)
 	<div class="alert-alert-danger">
 		<ul>
@@ -19,12 +19,24 @@
     {{Form::token()}}
 
 <div class="form-group">
-	<label for="codarticulo">Codigo</label>
-	<input type="text" name="codarticulo" class="form-control" required value="{{$producto->codarticulo}}">
+	<label for="serie_producto">Serie</label>
+	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
 </div>
 <div class="form-group">
-	<label for="marca">Marca</label>
-	<input type="text" name="marca" class="form-control" required value="{{$producto->marca}}">	
+	<label for="codigo_pedido">Codigo Pedido</label>
+	<input type="text" name="codigo_pedido" class="form-control" required value="{{$producto->codigo_pedido}}">	
+</div>
+<div class="form-group">
+	<label for="codigo_producto">Nombre Producto</label>
+	<input type="text" name="codigo_producto" class="form-control" required value="{{$producto->codigo_producto}}">	
+</div>
+<div class="form-group">
+	<label for="nombre_producto">Nombre</label>
+	<input type="text" name="nombre_productoe" class="form-control" required value="{{$producto->nombre_producto}}">	
+</div>
+<div class="form-group">
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" class="form-control" required value="{{$producto->nombre}}">	
 </div>
 <div class="form-group">
 	<label for="nombre">Nombre</label>
@@ -54,7 +66,5 @@
 
 </div>
 {!!Form::close()!!}
-
-<font SIZE=4 COLOR="white">---------------------------------------------------------------------------------------------------------------------------------------------------*--------------</font><a href="{{url('ventas/producto')}}"><button class="btn btn-success"><font FACE="Arial" SIZE=4 COLOR="white">volver</font></button></a></h3>
 
 @endsection

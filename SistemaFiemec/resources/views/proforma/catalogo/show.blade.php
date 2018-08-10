@@ -1,7 +1,7 @@
 @extends ('layouts.admin')
 @section ('contenido')
 
-<table id="pro" class="table">
+<table id="detalleproducto" class="table">
 
 				<tfoot>
                       <th ></th>
@@ -21,7 +21,7 @@
     	   
 
             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-            	<table id="pro" class="table table-striped table-bordered table-condensed table-hover">
+            	<table id="detalleproducto" class="table table-striped table-bordered table-condensed table-hover">
             		<thead style="background-color:#3c8dbc">
 		
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Id</font></th>
