@@ -38,6 +38,7 @@
 	    <label>Marca</label>
 	    <select name="marca_producto" class="form-control">
 	    	<option ></option>
+	    	<option value="FIEMEC">FIEMEC</option>
 			<option value="ABB">ABB</option>
 			<option value="Schneider">Schneider</option>
 		</select>
@@ -68,11 +69,13 @@
 	</div>
 
 
-
-<div class="from-group">
+<!-- JOSE CORRIGE EL MARGIN DEL BOTON VOLVER CTMR!!!! -->
+<div style="margin-top: 20px" class="from-group ">
 
 	<button class="btn btn-primary" type="submit">guardar</button>
 	<button class="btn btn-danger" type="reset">Limpiar</button>
+	<button style="margin-left: 300px" class="btn btn-success " type="button"><a style="color: white!important" href="{{url('proforma/producto')}}">volver</a></button>
+
 
 </div>
 

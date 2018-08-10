@@ -40,5 +40,71 @@ class ControllerProveedor extends Controller
 
        return view('proforma.proveedor.index',["proveedores"=>$proveedores,"searchText"=>$query]);
     }
+public function create()
+    {
+        //
+    }
+public function store(RequestFormProducto $request)
+    {
+        $producto=new Producto;
+        $producto->serie_producto=$request->get('serie_producto');
+        $producto->codigo_pedido=$request->get('codigo_pedido');
+        $producto->codigo_producto=$request->get('codigo_producto');
+        $producto->nombre_producto=$request->get('nombre_producto');
+        $producto->marca_producto=$request->get('marca_producto');
+        $producto->stock=$request->get('stock');
+        $producto->descripcion_producto=$request->get('descripcion_producto');
+        $producto->precio_unitario=$request->get('precio_unitario');
+        $producto->categoria_producto=$request->get('categoria_producto');
+        $mytime = Carbon::now('America/Lima');
+        $producto->fecha_sistema=$mytime->toDateTimeString();
+        $producto->estado='activo';
+        $producto->save();
+        return Redirect::to('proforma/producto');
+
+    }
+
+    public function show($id)
+    {
+    
+    
+   
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+      @return \Illuminate\Http\Response
+     /
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+      @param  int  $id
+      @return \Illuminate\Http\Response
+     /
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /*
+      Remove the specified resource from storage.
+     
+      @param  int  $id
+      @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+ }
 }
+
 }

@@ -26,10 +26,8 @@ class Empleados extends Model
     	'usuario',
     	'contraseño',
     	'direccion',
-
     	'correo',
     	'foto',
-
     	'estado',
      
    ];
