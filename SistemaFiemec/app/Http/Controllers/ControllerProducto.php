@@ -68,10 +68,6 @@ class ControllerProducto extends Controller
     public function show($id)
     {
     
-        $detalleproducto=DB::table('producto')
-        ->where('idProducto','=',$id)
-        ->get();
-        return view('proforma.catalogo.show',["detalleproducto"=>$detalleproducto]);
     
    
     }

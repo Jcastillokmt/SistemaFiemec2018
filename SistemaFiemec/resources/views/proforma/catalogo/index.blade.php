@@ -39,14 +39,11 @@
 					
 					
 					
-					
-<<<<<<< HEAD
-=======
 					<td>
-					<a href="{{URL::action('ControllerCatalogo@show',$cat->idProducto)}}"><button class="btn btn-input">ver</button>
+					<a href="{{URL::action('ControllerCatalogo@show',$pro->idProducto)}}"><button class="btn btn-input">ver</button>
 					</a>
 					</td>
->>>>>>> 9faa12d86f2c2af7a10f7f98ab3b8c3ddf5788e2
+
 					
 				</tr>
 				
