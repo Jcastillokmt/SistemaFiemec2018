@@ -35,7 +35,11 @@
 					<td>{{$pro->marca_producto}}</td>
 					<td>{{$pro->descripcion_producto}}</td>
 					<td>S/. {{$pro->precio_unitario}}</td>
-					
+					<td>
+					<a href="{{URL::action('ControllerProducto@edit',$pro->idProducto)}}"><button class="btn btn-info">editar</button>
+					</a>
+					<a href="" data-target="#modal-delete-{{$pro->idProducto}}" data-toggle="modal"><button class="btn btn-danger">eliminar</button></a>
+					</td>
 					
 					
 					

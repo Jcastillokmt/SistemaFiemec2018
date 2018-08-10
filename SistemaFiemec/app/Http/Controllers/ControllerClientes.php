@@ -28,9 +28,9 @@ class ControllerClientes extends Controller
        $clientes=DB::table('Cliente_Proveedor as cr')
        ->join('Cliente_direccion as cd','cr.idCliente','=','cd.idCliente')
 
-       ->select('cr.idCliente','cr.tipo_documento','cr.nro_documento','cr.nombres_Rs','cr.parterno','cr.materno','cr.telefono','cr.celular','cr.correo','cr.cuenta_1','cr.cuenta_2','cr.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cr.estado')
+       ->select('cr.idCliente','cr.tipo_documento','cr.nro_documento','cr.nombres_Rs','cr.paterno','cr.materno','cr.telefono','cr.celular','cr.correo','cr.cuenta_1','cr.cuenta_2','cr.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cr.estado')
 
-       ->groupBy('cr.idCliente','cr.tipo_documento','cr.nro_documento','cr.nombres_Rs','cr.parterno','cr.materno','cr.telefono','cr.celular','cr.correo','cr.cuenta_1','cr.cuenta_2','cr.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cr.estado')
+       ->groupBy('cr.idCliente','cr.tipo_documento','cr.nro_documento','cr.nombres_Rs','cr.paterno','cr.materno','cr.telefono','cr.celular','cr.correo','cr.cuenta_1','cr.cuenta_2','cr.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cr.estado')
 
        ->where('cr.nro_documento','LIKE','%'.$query.'%')
        ->orwhere('cr.nombres_Rs','LIKE','%'.$query.'%')
@@ -49,7 +49,7 @@ class ControllerClientes extends Controller
     {
  	$cliente=DB::table('Cliente_Proveedor as cp')
     ->join('Cliente_direccion as cd','cp.idCliente','=','cd.idCliente')
-    ->select('cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.paterno','cp.materno','cp.fecha_ nacimiento','cp.sexo','cp.telefono','cp.celular','cp.correo','cp.foto','cp.tipo_persona','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cp.fecha_sistema','cp.estado','cd.provincia','cd.distrito','cd.direcion','cd.referencia')
+    ->select('cp.idCliente','cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.paterno','cp.materno','cp.fecha_nacimiento','cp.sexo','cp.telefono','cp.celular','cp.correo','cp.foto','cp.tipo_persona','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cp.fecha_sistema','cp.estado','cd.provincia','cd.distrito','cd.direcion','cd.referencia')
     ->where('cp.idCliente','=',$id)
     ->get();
 		return view("proforma.cliente.show",["cliente"=>$cliente]);

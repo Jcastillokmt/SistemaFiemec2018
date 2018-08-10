@@ -26,15 +26,19 @@
 		
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Id</font></th>
 
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">codarticulo</font></th>
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Nombre</font></th>
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Marca</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Serie producto</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Codigo Pedido</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">codigo Producto</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Nombre </font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Marca Producto</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Stock</font></th>
 					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Descripcion</font></th>
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">categoria</font></th>
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">precio</font></th>
-					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">estado</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Precio Unitario</font></th>
 
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Foto</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Categoria</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Fecha Sistema</font></th>
+					<th style="text-align:center;"><font FACE="Arial" SIZE=4 COLOR="white">Estados</font></th>
 					
 				</thead>
             		<tfoot>

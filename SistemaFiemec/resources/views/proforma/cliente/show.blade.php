@@ -11,7 +11,7 @@
 
 				<tr>
 	
-				<td><font FACE="impact" SIZE=8 COLOR="black">{{$cliente->nombres_Rs}}</font></td>
+				<td><font FACE="impact" SIZE=8 COLOR="black">{{$clie->nombres_Rs}}</font></td>
 					
 				</tr>
 				@endforeach

@@ -41,8 +41,8 @@
 					<td>{{$empl->tipo_documento}}</td>
 					<td>{{$empl->nro_documento}}</td>
 					<td>{{$empl->nombres}}</td>
-					<td>{{$empl->paterno}}</td>
 					<td>{{$empl->materno}}</td>
+					<td>{{$empl->paterno}}</td>
 					<td>{{$empl->cargo}}</td>
 					<td>{{$empl->telefono}}</td>
 					<td>{{$empl->celular}}</td>
@@ -50,6 +50,13 @@
 					<td>{{$empl->estado}}</td>
 					
 					
+
+						<td>
+					<a href="{{URL::action('ControllerEmpleados@show',$empl->idEmpleado)}}"><button class="btn btn-input">ver</button>
+					</a>
+					</td>
+					
+
 				</tr>
 				
              @endforeach
