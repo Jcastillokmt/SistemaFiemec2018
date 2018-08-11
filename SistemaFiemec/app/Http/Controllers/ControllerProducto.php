@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use SistemaFiemec\Http\Requests\RequestFormProducto;
 use Carbon\Carbon;
-use Response;
-use Illuminate\Support\Collection;
+
 use DB;
 
 class ControllerProducto extends Controller
@@ -26,13 +25,11 @@ class ControllerProducto extends Controller
        $query=trim($request->get('searchText'));
        $productos=DB::table('Producto')
        ->where('serie_producto','LIKE','%'.$query.'%')
-       ->orwhere('codigo_producto','LIKE','%'.$query.'%')
-       ->orwhere('marca_producto','LIKE','%'.$query.'%')
        ->where('estado','=','activo')
-       ->orderby('idProducto','asc')
+       ->orderby('id','asc')
        ->paginate(20);
 
-       return view('proforma.producto.index',["Producto"=>$productos,"searchText"=>$query]);
+       return view('proforma.producto.index',["productos"=>$productos,"searchText"=>$query]);
     }
 }
     
@@ -65,24 +62,20 @@ class ControllerProducto extends Controller
         return Redirect::to('proforma/producto');
 
     }
-<<<<<<< HEAD
+
 
 public function edit($id)
     {
+
         return view("proforma.producto.edit",["producto"=>Producto::findOrFail($id)]);
     }
    
-   public function update(RequestFormProducto $request,$id)
-    {
-=======
-   public function edit($id)
-    {
-        return view("proforma.producto.edit",["producto"=>Producto::findOrFail($id)]);
-    }
+  
+   
     public function update(RequestFormProducto $request,$id)
     {
->>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
-       $producto=Producto::findOrFail($id);
+
+        $producto=Producto::find($id);
         $producto->serie_producto=$request->get('serie_producto');
         $producto->codigo_pedido=$request->get('codigo_pedido');
         $producto->codigo_producto=$request->get('codigo_producto');
@@ -95,20 +88,15 @@ public function edit($id)
         $producto->update();
         return Redirect::to('proforma/producto');
     }
-<<<<<<< HEAD
+
     public function destroy($id)
     {
         $producto=Producto::findOrFail($id);
         $producto->estado='retirado';
         $producto->update();
         return Redirect::to('proforma/producto');
-=======
 
-    
-    public function destroy($id)
-    {
-        
->>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
+
     }
- 
+    
  }

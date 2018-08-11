@@ -28,7 +28,7 @@
 				
 				<tr>
 
-					
+					<td>{{$pro->id}}</td>
 					<td>{{$pro->serie_producto}}</td>
 					<td>{{$pro->codigo_producto}}</td>
 					<td>{{$pro->nombre_producto}}</td>
@@ -36,9 +36,9 @@
 					<td>{{$pro->descripcion_producto}}</td>
 					<td>S/. {{$pro->precio_unitario}}</td>
 					<td>
-					<a href="{{URL::action('ControllerProducto@edit',$pro->idProducto)}}"><button class="btn btn-info">editar</button>
+					<a href="{{URL::action('ControllerProducto@edit',$pro->id)}}"><button class="btn btn-info">editar</button>
 					</a>
-					<a href="" data-target="#modal-delete-{{$pro->idProducto}}" data-toggle="modal"><button class="btn btn-danger">eliminar</button></a>
+					<a href="" data-target="#modal-delete-{{$pro->id}}" data-toggle="modal"><button class="btn btn-danger">eliminar</button></a>
 					</td>
 					
 					
