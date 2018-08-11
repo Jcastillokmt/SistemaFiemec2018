@@ -4,7 +4,7 @@ namespace SistemaFiemec\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RequestFromProducto extends FormRequest
+class RequestFormProducto extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,7 @@ class RequestFromProducto extends FormRequest
     public function rules()
     {
         return [
+           
         'serie_producto'=>'max:45',
         'codigo_pedido'=>'max:45',
         'codigo_producto'=>'max:45',
@@ -34,8 +35,8 @@ class RequestFromProducto extends FormRequest
         'precio_unitario'=>'numeric',
         'foto'=>'max:250',
         'categoria_producto'=>'max:45',
-        /*la 'fecha_hora' se le asginara el valor en el controlador*/
         'estado'=>'max:15',
+       
         ];
     }
 }

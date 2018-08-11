@@ -4,11 +4,14 @@ namespace SistemaFiemec\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use SistemaFiemec\Http\Requests;
 use SistemaFiemec\Producto;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use SistemaFiemec\Http\Requests\RequestFormProducto;
 use Carbon\Carbon;
+use Response;
+use Illuminate\Support\Collection;
 
 use DB;
 
