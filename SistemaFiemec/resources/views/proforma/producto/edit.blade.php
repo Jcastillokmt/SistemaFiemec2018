@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-	<h3>Modificar Producto: {{ $producto->nombre_producto}}</h3>
+	<h3>Modificar Producto: {{$producto->nombre_producto}}</h3>
 	@if (count($errors)>0)
 	<div class="alert-alert-danger">
 		<ul>
@@ -15,15 +15,19 @@
 </div>
 </div>
 
-    {!!Form::model($producto,['method'=>'PATCH','route'=>['producto.update',$producto->idProducto],'files'=>'true'])!!}
+    {!!Form::model($producto,['method'=>'PATCH','route'=>['producto.update',$producto->id]])!!}
     {{Form::token()}}
-<div class="form-group">
-	<label for="idProducto">ID Producto</label>
-	<input type="text" name="idProducto" class="form-control" required value="{{$producto->idProducto}}">
-</div>
+<<<<<<< HEAD
 
 <div class="form-group">
-<<<<<<< HEAD
+=======
+    
+
+
+
+<div class="form-group">
+
+>>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 	<label for="serie_producto">Serie Producto</label>
 	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
 </div>
@@ -31,16 +35,13 @@
 	<label for="codigo_pedido">Codigo Pedido</label>
 	<input type="text" name="codigo_pedido" class="form-control" required value="{{$producto->codigo_pedido}}">	
 </div>
+
 <div class="form-group">
 	<label for="codigo_producto">Codigo Producto</label>
 	<input type="text" name="codigo_producto" class="form-control" required value="{{$producto->codigo_producto}}">	
-=======
+<<<<<<< HEAD
 	<label for="serie_producto">Serie</label>
 	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
-</div>
-<div class="form-group">
-	<label for="codigo_pedido">Codigo Pedido</label>
-	<input type="text" name="codigo_pedido" class="form-control" required value="{{$producto->codigo_pedido}}">	
 </div>
 <div class="form-group">
 	<label for="codigo_producto">Nombre Producto</label>
@@ -53,8 +54,10 @@
 <div class="form-group">
 	<label for="nombre">Nombre</label>
 	<input type="text" name="nombre" class="form-control" required value="{{$producto->nombre}}">	
->>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
+=======
+>>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 </div>
+
 <div class="form-group">
 	<label for="nombre_producto">Nombre Producto</label>
 	<input type="text" name="nombre_producto" class="form-control" required value="{{$producto->nombre_producto}}">	
@@ -113,8 +116,7 @@
 {!!Form::close()!!}
 
 <<<<<<< HEAD
-
-
 =======
->>>>>>> c1de497f3bd5a2ca8a2c21b18291103f7977ca9e
+
+>>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 @endsection

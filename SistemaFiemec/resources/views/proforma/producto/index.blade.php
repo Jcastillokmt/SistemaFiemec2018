@@ -10,25 +10,23 @@
 		<div class="table-responsive">
 			<table class=" table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					
+					<th>ID</th>
 					<th>Nº Serie</th>
 					<th>Codigo</th>
 					<th>Nombre</th>
 					<th>Marca</th>
                     <th>Descripcion</th>
-                    <th>Precio</th>                
-                    
-                   
-
-
-					
+                    <th>Precio</th>                					
 				</thead>
 
 				@foreach ($productos as $pro)
-				
 				<tr>
+<<<<<<< HEAD
+					<td >{{$pro->id}}</td>
+=======
 
-					
+					<td>{{$pro->id}}</td>
+>>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 					<td>{{$pro->serie_producto}}</td>
 					<td>{{$pro->codigo_producto}}</td>
 					<td>{{$pro->nombre_producto}}</td>
@@ -36,9 +34,13 @@
 					<td>{{$pro->descripcion_producto}}</td>
 					<td>S/. {{$pro->precio_unitario}}</td>
 					<td>
-					<a href="{{URL::action('ControllerProducto@edit',$pro->idProducto)}}"><button class="btn btn-info">editar</button>
+<<<<<<< HEAD
+					<a href="{{route('producto.edit',$pro->id)}}"><button class="btn btn-info">editar</button>
+=======
+					<a href="{{URL::action('ControllerProducto@edit',$pro->id)}}"><button class="btn btn-info">editar</button>
+>>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 					</a>
-					<a href="" data-target="#modal-delete-{{$pro->idProducto}}" data-toggle="modal"><button class="btn btn-danger">eliminar</button></a>
+					<a href="" data-target="#modal-delete-{{$pro->id}}" data-toggle="modal"><button class="btn btn-danger">eliminar</button></a>
 					</td>
 					
 					
@@ -49,6 +51,7 @@
              @endforeach
 			</table>
 		</div>
+		<!--para la paginacion-->
 		{{$productos->render()}}
 	</div>
 </div>

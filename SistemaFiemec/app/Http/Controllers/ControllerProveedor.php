@@ -31,7 +31,9 @@ class ControllerProveedor extends Controller
        ->select('cp.idCliente','cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.telefono','cp.celular','cp.correo','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cp.estado')
 
               ->where('cp.nro_documento','LIKE','%'.$query.'%')
+             ->where('cp.nombres_Rs','LIKE','%'.$query.'%')
        ->where('cp.tipo_persona','=','proveedor')
+
        ->orderby('cp.idCliente','asc')
        ->groupBy('cp.idCliente','cp.tipo_documento','cp.nro_documento','cp.nombres_Rs','cp.telefono','cp.celular','cp.correo','cp.cuenta_1','cp.cuenta_2','cp.cuenta_3','cd.provincia','cd.distrito','cd.direcion','cp.estado')
 
