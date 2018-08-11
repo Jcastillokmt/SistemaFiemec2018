@@ -7,11 +7,10 @@ use SistemaFiemec\Producto;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use SistemaFiemec\Http\Requests\RequestFormProducto;
-<<<<<<< HEAD
-=======
+
 use Carbon\Carbon;
 
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
+
 use DB;
 
 class ControllerProducto extends Controller
@@ -23,7 +22,7 @@ class ControllerProducto extends Controller
      */
     public function index(Request $request)
     {
-<<<<<<< HEAD
+
         if ($request) 
         {
            $query=trim($request->get('searchText'));
@@ -35,7 +34,7 @@ class ControllerProducto extends Controller
            return view('proforma.producto.index',["productos"=>$productos,"searchText"=>$query]);
         }
         
-=======
+
     if($request)
     {
        $query=trim($request->get('searchText'));
@@ -46,7 +45,7 @@ class ControllerProducto extends Controller
        ->paginate(20);
 
        return view('proforma.producto.index',["productos"=>$productos,"searchText"=>$query]);
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
+
     }
 
     /**
@@ -69,10 +68,7 @@ class ControllerProducto extends Controller
     {
         //
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 
     /**
      * Display the specified resource.
@@ -82,8 +78,7 @@ class ControllerProducto extends Controller
      */
     public function show($id)
     {
-<<<<<<< HEAD
-        //
+
     }
 
     /**
@@ -94,8 +89,10 @@ class ControllerProducto extends Controller
      */
     public function edit($id)
     {
+
         return view("proforma.producto.edit",["producto"=>Producto::findOrFail($id)]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -108,10 +105,11 @@ class ControllerProducto extends Controller
     {
 
         $producto=Producto::findOrFail($id);
-=======
+
 
         return view("proforma.producto.edit",["producto"=>Producto::findOrFail($id)]);
     }
+
    
   
    
@@ -119,7 +117,7 @@ class ControllerProducto extends Controller
     {
 
         $producto=Producto::find($id);
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
+
         $producto->serie_producto=$request->get('serie_producto');
         $producto->codigo_pedido=$request->get('codigo_pedido');
         $producto->codigo_producto=$request->get('codigo_producto');
@@ -132,7 +130,7 @@ class ControllerProducto extends Controller
         $producto->update();
         return Redirect::to('proforma/producto');
     }
-<<<<<<< HEAD
+
 
     /**
      * Remove the specified resource from storage.
@@ -145,7 +143,7 @@ class ControllerProducto extends Controller
         //
     }
 }
-=======
+
 
     public function destroy($id)
     {
@@ -156,6 +154,7 @@ class ControllerProducto extends Controller
 
 
     }
-    
+}
+
  }
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
+

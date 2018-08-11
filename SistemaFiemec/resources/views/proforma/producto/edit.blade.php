@@ -17,17 +17,17 @@
 
     {!!Form::model($producto,['method'=>'PATCH','route'=>['producto.update',$producto->id]])!!}
     {{Form::token()}}
-<<<<<<< HEAD
+
 
 <div class="form-group">
-=======
+
     
 
 
 
 <div class="form-group">
 
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
+
 	<label for="serie_producto">Serie Producto</label>
 	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
 </div>
@@ -39,7 +39,7 @@
 <div class="form-group">
 	<label for="codigo_producto">Codigo Producto</label>
 	<input type="text" name="codigo_producto" class="form-control" required value="{{$producto->codigo_producto}}">	
-<<<<<<< HEAD
+
 	<label for="serie_producto">Serie</label>
 	<input type="text" name="serie_producto" class="form-control" required value="{{$producto->serie_producto}}">
 </div>
@@ -54,8 +54,7 @@
 <div class="form-group">
 	<label for="nombre">Nombre</label>
 	<input type="text" name="nombre" class="form-control" required value="{{$producto->nombre}}">	
-=======
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
+
 </div>
 
 <div class="form-group">
@@ -115,8 +114,5 @@
 </div>
 {!!Form::close()!!}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 8c0933f5156f3a71ad7af511617e7b801b91849f
 @endsection
