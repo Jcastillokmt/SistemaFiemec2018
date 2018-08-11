@@ -13,7 +13,7 @@
     </div>
     @endif
 
-    {!!Form::open(array('url'=>'proforma/producto','method'=>'POST','autocomplete'=>'off','files'=>'true'))!!}
+    {!!Form::open(array('url'=>'proforma/producto','method'=>'POST','autocomplete'=>'off'))!!}
 
     {{Form::token()}}
 <div class="form-group">
